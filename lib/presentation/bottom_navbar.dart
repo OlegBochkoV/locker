@@ -31,28 +31,33 @@ class CustomNavigationBar extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(top: 10, bottom: 20),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ItemNavBar(
-              icon: AssetsSvg.locker,
-              title: Translations.locker,
-              select: page == Pages.lockers,
-              page: Pages.lockers,
-              onTap: onTap,
+            Expanded(
+              child: ItemNavBar(
+                icon: AssetsSvg.locker,
+                title: Translations.locker,
+                select: page == Pages.lockers,
+                page: Pages.lockers,
+                onTap: onTap,
+              ),
             ),
-            ItemNavBar(
-              icon: AssetsSvg.friend,
-              title: Translations.friend,
-              select: page == Pages.friend,
-              page: Pages.friend,
-              onTap: onTap,
+            Expanded(
+              child: ItemNavBar(
+                icon: AssetsSvg.friend,
+                title: Translations.friend,
+                select: page == Pages.friend,
+                page: Pages.friend,
+                onTap: onTap,
+              ),
             ),
-            ItemNavBar(
-              icon: AssetsSvg.profile,
-              title: Translations.profile,
-              select: page == Pages.profile,
-              page: Pages.profile,
-              onTap: onTap,
+            Expanded(
+              child: ItemNavBar(
+                icon: AssetsSvg.profile,
+                title: Translations.profile,
+                select: page == Pages.profile,
+                page: Pages.profile,
+                onTap: onTap,
+              ),
             ),
           ],
         ),

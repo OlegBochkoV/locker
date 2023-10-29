@@ -3,11 +3,13 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:locker/data/constants/server.dart';
 import 'package:locker/data/models/locker.dart';
+import 'package:locker/domain/repository/locker_repository.dart';
 
-class LockerService {
+class LockerService extends LockerRepository {
   final Dio _dio = Dio(BaseOptions(baseUrl: BASE_URL));
 
-  Future<List<Locker>?> getLockers() async {
+  @override
+  Future<List<Locker>> gerLocker() async {
     try {
       final response = await _dio.get('/ozon671game/demo/db');
       List<Locker> lockers = [];
@@ -18,6 +20,6 @@ class LockerService {
     } catch (e) {
       log('LockerService getLockers\n$e');
     }
-    return null;
+    return [];
   }
 }
